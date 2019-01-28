@@ -13,6 +13,9 @@ public class ParticleSplatOnCollision : MonoBehaviour {
 
     void Start() {
         collisionEvents = new List<ParticleCollisionEvent>();
+        if (dropletDecalPool == null) {
+            dropletDecalPool = GameObject.Find("ParticleSplatterController").GetComponent<ParticleDecalPool>();
+        }
     }
 
     void OnParticleCollision(GameObject other) {
