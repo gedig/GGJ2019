@@ -5,9 +5,11 @@ using UnityEngine;
 public class SauceCleaner : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("ENTERED SINK!");
-        if (other.tag == "GetsCleanedUp") {
-            Destroy(other.gameObject);
+        for (int i = 0; i < other.transform.childCount; ++i) {
+            Transform otherChild = other.transform.GetChild(i);
+            if (otherChild.tag == "GetsCleanedUp") {
+                Destroy(otherChild.gameObject);
+            }
         }
     }
 }

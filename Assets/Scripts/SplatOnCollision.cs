@@ -17,7 +17,7 @@ public class SplatOnCollision : MonoBehaviour
             spawned.transform.position = contact.point + (ray.direction * -0.01f);
             spawned.transform.forward = ray.direction;
             spawned.transform.Rotate(spawned.transform.forward, Random.value);
-            spawned.transform.parent = collision.transform.parent;
+            spawned.transform.parent = collision.transform;
         }
 
         Debug.DrawRay(ray.origin, ray.direction, Color.cyan, 5, true);
